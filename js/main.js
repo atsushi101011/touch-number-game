@@ -8,8 +8,9 @@
       this.el.classList.add("pressed");　　　//el(=li)にクラスpressedを追加
       this.el.addEventListener("click", ()=>{
         this.check();
-      });
-    }
+    　});
+  　}
+    
     getEl(){
       return this.el;
     }
@@ -32,6 +33,7 @@
 
   }
 
+  
   class Board {     //class=設計図
     constructor(game) {　
       this.game = game;　　　//インスタンスを生成するための機能
@@ -42,27 +44,27 @@
       this.setup();
     }
 
-  setup(){
-    const board = document.getElementById("board");　　//htmlのidのboardを取得
-    this.panels.forEach(panel => {
-      board.appendChild(panel.getEl());　　　　　//boardにelを追加(つまりliを追加)、それをforeachでループ
-    });
+  　　setup(){
+    　　　const board = document.getElementById("board");　　//htmlのidのboardを取得
+    　　　this.panels.forEach(panel => {
+      　　board.appendChild(panel.getEl());　　　　　//boardにelを追加(つまりliを追加)、それをforeachでループ
+    　    });
 
-  }
+     }
 
-  activate(){
-    const nums = [];
-    for (let i = 0; i<this.game.getLevel() **2 ;i++){
-      nums.push(i);
+    activate(){
+      const nums = [];
+      for (let i = 0; i<this.game.getLevel() **2 ;i++){
+        nums.push(i);
+      } 
+
+      this.panels.forEach(panel => {           //一つずつ数字入れる
+        const num =nums.splice(Math.floor(Math.random() * nums.length),1)[0]; //ランダムにnumsから数字を取る
+        panel.activate(num);                                                  //spliceメソッド=新しい要素を追加　Math.floor=小数点以下切り捨て　Math.random=0から１でランダム
+      });
+
     }
-
-    this.panels.forEach(panel => {           //一つずつ数字入れる
-      const num =nums.splice(Math.floor(Math.random() * nums.length),1)[0]; //ランダムにnumsから数字を取る
-      panel.activate(num);                                                  //spliceメソッド=新しい要素を追加　Math.floor=小数点以下切り捨て　Math.random=0から１でランダム
-    });
-
   }
-}
 
   class Game{
     constructor(level){
