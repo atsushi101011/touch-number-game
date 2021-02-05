@@ -33,7 +33,6 @@
 
   }
 
-  
   class Board {     //class=設計図
     constructor(game) {　
       this.game = game;　　　//インスタンスを生成するための機能
@@ -124,7 +123,5 @@
   }
 
   }
-
   new Game(5);
-
   }
