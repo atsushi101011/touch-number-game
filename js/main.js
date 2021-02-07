@@ -67,25 +67,23 @@
 
   class Game{
     constructor(level){
-     this.level =level;
-     this.board = new Board(this);   //クラスから生成したオブジェクトを「インスタンス」という
+      this.level =level;
+      this.board = new Board(this);   //クラスから生成したオブジェクトを「インスタンス」という
 
-    this.currentNum=undefined;
-    this.startTime=undefined;
-    this.timeoutId=undefined;
-
-    const btn = document.getElementById("btn");
-    btn.addEventListener("click", ()=>{     //START押したら
-      this.start();　　　　　
-    });
-    this.setup();
+      this.currentNum=undefined;
+      this.startTime=undefined;
+      this.timeoutId=undefined;
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", ()=>{     //START押したら
+        this.start();　　　　　
+      });
+      this.setup();
   }
 
   setup(){
     const container = document.getElementById("container");
     const PANEL_WIDTH =50;
     const BOARD_PADDING = 10;
-
     container.style.width =PANEL_WIDTH * this.level + BOARD_PADDING * 2 + "px";
   }
 
@@ -95,7 +93,6 @@
     }
     this.currentNum = 0;
     this.board.activate();　　　　
-
     this.startTime = Date.now();    // Date.now  1970年からの現在のms時間
     this.runTimer();　　　
 
@@ -103,7 +100,6 @@
    runTimer(){
     const timer = document.getElementById('timer');
     timer.textContent = ((Date.now() - this.startTime)/1000).toFixed(2);   //Date.now() - startTimeで、何秒経ったかわかる  小数第二位
-
     this.timeoutId = setTimeout(() =>{   //指定した時間が経過した後に動作開始
       this.runTimer();
     },10);
