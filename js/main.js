@@ -30,7 +30,6 @@
         }
       }
     }
-
   }
 
   class Board {     //class=設計図
@@ -48,7 +47,6 @@
     　　　this.panels.forEach(panel => {
       　　board.appendChild(panel.getEl());　　　　　//boardにelを追加(つまりliを追加)、それをforeachでループ
     　    });
-
      }
 
     activate(){
@@ -61,7 +59,6 @@
         const num =nums.splice(Math.floor(Math.random() * nums.length),1)[0]; //ランダムにnumsから数字を取る
         panel.activate(num);                                                  //spliceメソッド=新しい要素を追加　Math.floor=小数点以下切り捨て　Math.random=0から１でランダム
       });
-
     }
   }
 
@@ -69,7 +66,6 @@
     constructor(level){
       this.level =level;
       this.board = new Board(this);   //クラスから生成したオブジェクトを「インスタンス」という
-
       this.currentNum=undefined;
       this.startTime=undefined;
       this.timeoutId=undefined;
