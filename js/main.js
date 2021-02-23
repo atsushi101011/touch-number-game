@@ -1,5 +1,4 @@
 'use strict';
-
 {
   class  Panel {
     constructor(game) {
@@ -14,12 +13,10 @@
     getEl(){
       return this.el;
     }
-
     activate(num){
       this.el.classList.remove("pressed");　　
       this.el.textContent = num;
     }
-
     check(){
       if (this.game.getCurrentNum() === parseInt(this.el.textContent,10)){  //parseInt＝文字列のel.textContentを整数に変換する、10進数
         this.el.classList.add("pressed");
