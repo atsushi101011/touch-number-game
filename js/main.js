@@ -88,7 +88,6 @@
     this.board.activate();　　　　
     this.startTime = Date.now();    // Date.now  1970年からの現在のms時間
     this.runTimer();　　　
-
   }
    runTimer(){
     const timer = document.getElementById('timer');
