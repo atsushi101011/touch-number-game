@@ -9,7 +9,6 @@
         this.check();
     　});
   　}
-    
     getEl(){
       return this.el;
     }
@@ -109,7 +108,6 @@
   getLevel(){
     return this.level;
   }
-
   }
   new Game(5);
   }
