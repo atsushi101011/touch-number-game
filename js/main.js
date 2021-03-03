@@ -38,7 +38,7 @@
       this.setup();
     }
 
-  　　setup(){
+  　 setup(){
     　　　const board = document.getElementById("board");　　//htmlのidのboardを取得
     　　　this.panels.forEach(panel => {
       　　board.appendChild(panel.getEl());　　　　　//boardにelを追加(つまりliを追加)、それをforeachでループ
