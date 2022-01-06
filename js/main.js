@@ -28,7 +28,7 @@
     }
   }
 
-  class Board {     //class=設計図
+  class Board {  //class=設計図
     constructor(game) {　
       this.game = game;　　　//インスタンスを生成するための機能
       this.panels = [];
@@ -51,7 +51,7 @@
         nums.push(i);
       } 
 
-      this.panels.forEach(panel => {           //一つずつ数字入れる
+      this.panels.forEach(panel => {  //一つずつ数字入れる
         const num =nums.splice(Math.floor(Math.random() * nums.length),1)[0]; //ランダムにnumsから数字を取る
         panel.activate(num);                                                  //spliceメソッド=新しい要素を追加　Math.floor=小数点以下切り捨て　Math.random=0から１でランダム
       });
